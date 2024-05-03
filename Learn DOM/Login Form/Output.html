@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutPut page</title>
+</head>
+<body onload="dataCall()">
+    <div class="output">
+        <h2 id="output"></h2>
+    </div>
+</body>
+</html>
+<script>
+    function dataCall(){
+        var clink = window.location.href;
+        var s = clink.split("?");
+        var d = s[1].split("&");
+        var data = {};
+        for(let i=0;i<d.length;i++){
+        let temp = d[i].split("=");
+            data[i]=temp[1];
+        }
+        for(let i=0;i<d.length;i++)
+            document.write(data[i]+"<br>");    
+    }
+</script>

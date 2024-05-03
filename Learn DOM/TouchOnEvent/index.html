@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .outer-items {
+            background-color: aquamarine;
+            padding: 80px;
+            height: 50%;
+            border-radius: 50%;
+        }
+        .mid{
+            padding: 30px;
+            display:inline-flex;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .mid button{
+            border: none;
+            background-color: rgb(27, 176, 225);
+            border-radius: 30px;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .top-items{
+            width: 400px;
+        }
+
+        .top-items img{
+            margin: 25px;
+            border: 2px solid black;
+            cursor: pointer;
+            width: 70px;
+            border-radius: 50%;
+        }
+        .top-items,.bottom-items{
+            display: none;
+        }
+        .bottom-items img{
+            margin: 25px;
+            border: 2px solid black;
+            cursor: pointer;
+            width: 70px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <dicv class="container">
+        <div class="outer-items">
+            <div class="top-items">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsZlW3IZBrDmQ1ek_82xci1a5LYF_yJAI7QQ&s"
+                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_640.png" alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuPVghWMU7sc_Vetn1hwZMb1tGhqV_HCksjg&s"
+                    alt="">
+            </div>
+            <div class="mid">
+                <button>Learn Programming</button>
+            </div>
+            <div class="bottom-items">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq0Pw0WiD1CJI4ZKFwmjP9uaatqk5ICQSglA&s"
+                    alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTca938QAXi4ZsusB85Efwg33ovIB2o7TPa_Q&s"
+                    alt="">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9I-1OufFLEMTcz7aZAs_RfaRDJc5l6NrXZw&s"
+                    alt="">
+            </div>
+        </div>
+    </dicv>
+</body>
+<script>
+    var a = document.querySelector('button');
+    var ti = document.querySelector('.top-items');
+    var bi = document.querySelector('.bottom-items');
+    var flag=0;
+
+    a.addEventListener('click',function(){
+        if(flag==0){
+            ti.style.display = "block";
+            bi.style.display = "block";
+            flag=1;
+        }else{
+            ti.style.display = "none";
+            bi.style.display = "none";
+            flag=0;
+        }
+    });
+</script>
+</html>

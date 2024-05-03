@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        .main{
+            text-align: center;
+        }
+        .main input{
+            font-size: 20px;
+            width: 300px;
+            height: 30px;
+        }
+        .buttons button{
+            margin: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border: none;
+            background-color: rgb(190, 135, 243);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h3>Random Password Generator</h3>
+        <input type="text" id="input">
+        <div class="buttons">
+            <button onclick="generate()">Generate</button>
+            <button onclick="copy()">Copy</button>
+        </div>
+        <div class="output">
+            <h2 id="output"></h2>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function generate(){
+        var len = parseInt(document.getElementById('input').value);
+
+        var a = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\!@#$%^&*?_/";
+        var pass = "";
+
+            for(let i=0;i<len;i++){
+                let index = Math.floor(Math.random()*a.length);
+                pass= pass+a[index];   
+            }
+            document.getElementById('output').innerHTML=pass;
+    }
+
+    function copy(){
+        var copy = document.getElementById('output').value;
+    }
+</script>
+</html>

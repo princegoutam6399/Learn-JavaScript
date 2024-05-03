@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .text h2 {
+            font-size: 40px;
+        }
+
+        .input input {
+            width: 250px;
+            height: 20px;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <h2>Count Down</h2>
+            <div class="input">
+                <input type="text" id="num" placeholder="Enter Something"> <button onclick="abc()">Start</button>
+            </div>
+            <div class="time">
+                <h2 id="timer">00:00</h2>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function abc(){
+    var button = document.querySelector('button');
+    var mm = parseInt(document.getElementById('num').value);
+        var ss = 60;
+        var timer = document.querySelector('#timer');
+        setInterval(function () {
+            if((ss==60)){
+                mm=mm-1;
+            }
+            if(mm>=0){
+            timer.innerHTML = mm + " : " + ss;
+            ss = ss - 1;
+            }   
+            if(ss==0){
+                ss=60;
+            }
+            console.log(ss,mm);
+        }, 1000);
+    }
+</script>
+
+</html>

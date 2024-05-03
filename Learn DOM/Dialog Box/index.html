@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Box</title>
+    <link rel="stylesheet" href="style.css">
+    
+<body>
+    
+    <div class="buttons">
+        <button id="btn" onclick="abc()">Click me</button>
+    </div>
+    <div class="main">
+        <div class="data">
+            <h2>Dialog Box</h2>
+            <input type="text" placeholder="Enter Your Name" name="username"></p>
+            <input type="text" placeholder="Enter Your Password" name="userpassword"></p>
+            <input type="text" placeholder="Enter Your Phone No." name="userphone"></p>
+            <div class="buttons">
+                <button>Submit</button>
+                <button onclick="xyz()">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function abc(){
+        document.body.children[1].style.display="block";
+    }
+    function xyz(){
+        document.body.children[1].style.display="none";
+    }
+</script>

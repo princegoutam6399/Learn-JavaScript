@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 10vh;
+}
+
+.logo{
+    padding: 10px;
+    font-size: 20px;
+    float: left;
+    margin-top: 5px;
+}
+.list-items{
+    margin-top: 10px;
+    background-color: aqua;  
+    text-align:  center;
+}
+ul li{
+    list-style: none;
+    font-size: 20px;
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+}
+.buttons{
+    margin: 20px;
+}
+button{
+    cursor: pointer;
+    font-size: 20px;
+    background-color: rgb(127, 197, 255);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.form{
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 40%;
+    background-color: rgb(162, 244, 108);
+    width: 300px;
+    height: 350px;
+}
+.form h2{
+    padding-top: 10px;
+    text-align: center;
+}
+
+input{
+    width: 250px;
+    height: 40px;
+    margin: 15px;
+    border: none;
+}
+

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Game</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boxes {
+            padding: 20px;
+            width: 380px;
+            /* height: 380px; */
+            background-color: cyan;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            font-size: 50px;
+            background-color: lime;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="boxes">
+            <div class="box box1" onclick="fun(1)"></div>
+            <div class="box box2" onclick="fun(2)"></div>
+            <div class="box box3" onclick="fun(3)"></div>
+            <div class="box box4" onclick="fun(4)"></div>
+            <div class="box box5" onclick="fun(5)"></div>
+            <div class="box box6" onclick="fun(6)"></div>
+            <div class="box box7" onclick="fun(7)"></div>
+            <div class="box box8" onclick="fun(8)"></div>
+            <div class="box box9" onclick="fun(9)"></div>
+        </div>
+    </div>
+    <h1></h1>
+    <h2></h2>
+</body>
+<script>
+    var player = 'X';
+    var arr = [];
+    var index = 0;
+    var flag = 1;
+    var a = 'a', b = 'b', c = 'c', d = 'd', e = 'e', f = 'f', g = 'g', h = 'h', i = 'i';
+    function fun(x) {
+        if (!arr.includes(x)) {
+            arr[index] = x;
+            index = index + 1;
+            var box;
+            if (flag == 1) {
+                switch (x) {
+                    case 1:
+                        box = document.querySelector('.box1');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        a = player;
+                        break;
+                    case 2:
+                        box = document.querySelector('.box2');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        b = player;
+                        break;
+                    case 3:
+                        box = document.querySelector('.box3');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        c = player;
+                        break;
+                    case 4:
+                        box = document.querySelector('.box4');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        d = player;
+                        break;
+                    case 5:
+                        box = document.querySelector('.box5');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        e = player;
+                        break;
+                    case 6:
+                        box = document.querySelector('.box6');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        f = player;
+                        break;
+                    case 7:
+                        box = document.querySelector('.box7');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        g = player;
+                        break;
+                    case 8:
+                        box = document.querySelector('.box8');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        h = player;
+                        break;
+                    case 9:
+                        box = document.querySelector('.box9');
+                        box.innerHTML = player;
+                        if (player == 'X') {
+                            box.style.backgroundColor = 'red';
+                            box.style.color = 'white';
+                        } else {
+                            box.style.backgroundColor = 'white';
+                            box.style.color = 'red';
+                        }
+                        i = player;
+                        break;
+                }
+                if (((a == b) && (b == c)) || ((d == e) && (e == f)) || ((g == h) && (h == i)) || ((d == d) && (d == g)) || ((b == e) && (e == h)) || ((c == f) && (f == i)) || ((a == e) && (e == i)) || ((c == e) && (e == g))) {
+                    document.querySelector('h1').innerHTML = player + " WIN";
+                    flag = 0;
+                }
+                if (player == 'X')
+                    player = '0';
+                else
+                    player = 'X';
+            }
+        } else {
+            document.querySelector('h2').innerHTML = "Wrong Entered! Restart Game!";
+        }
+    }
+</script>
+
+</html>
+<!-- abc def ghi adg beh cfi aei ceg -->

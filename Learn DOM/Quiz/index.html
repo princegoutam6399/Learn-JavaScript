@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="disp(1)">
+    <div class="text">
+        <h2>Quiz Game</h2>
+    </div>
+    <div class="container">
+        <div class="items">
+            <div class="que">
+                <p>Que - 1. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, sunt!</p>
+            </div>
+            <div class="ans">
+                <h4 class="ans1 wrong">Hello</h4>
+                <h4 class="ans2 wrong">India</h4>
+                <h4 class="ans3 Ans">Hello </h4>
+                <h4 class="ans4 wrong">Mumbai</h4>
+            </div>
+            <div class="button">
+                <button onclick="disp(-1)">
+                    < Prevoius</button>
+                        <button onclick="disp(1)">Next ></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var arr = [[
+        "A flashing red traffic light signifies that a driver should do what?",
+        "stop",
+        "speed up",
+        "proceed with caution",
+        "honk the horn",
+        "A"
+    ], [
+        "A knish is traditionally stuffed with what filling?",
+        "potato",
+        "creamed corn",
+        "lemon custard",
+        "raspberry jelly",
+        "A"
+    ], [
+        "A pita is a type of what?",
+        "fresh fruit",
+        "flat bread",
+        "French tart",
+        "friend bean dip",
+        "B"
+    ], [
+        "A portrait that comically exaggerates a person's physical traits is called a what?",
+        "landscape",
+        "caricature",
+        "still life",
+        "Impressionism",
+        "B"
+    ], [
+        "A second-year college student is usually called a what?",
+        "sophomore",
+        "senior",
+        "freshman ",
+        "junior ",
+        "A"
+    ], [
+        "A student who earns a J.D. can begin his or her career as a what?",
+        "lawyer",
+        "bricklayer",
+        "doctor",
+        "accountant",
+        "A"
+    ], [
+        "A triptych is a work of art that is painted on how many panels?",
+        "two",
+        "three",
+        "five",
+        "eight",
+        "B"
+    ]];
+    var num = -1;
+    function disp(m) {
+        if ((num + m) > -1) {
+            num = num + m;
+            document.querySelector('.que').innerHTML = arr[num][0];
+            document.querySelector('.ans1').innerHTML = arr[num][1];
+            document.querySelector('.ans2').innerHTML = arr[num][2];
+            document.querySelector('.ans3').innerHTML = arr[num][3];
+            document.querySelector('.ans4').innerHTML = arr[num][4];
+            var h4 = document.querySelectorAll('h4');
+            h4.forEach((h)=>{
+                h.style.backgroundColor = "white";
+            });
+        }
+    }
+    var ans = document.querySelector('.Ans');
+    ans.addEventListener('click', function () {
+        ans.style.backgroundColor = "green";
+    });
+    var wrong = document.querySelectorAll('.wrong');
+    wrong.forEach((button)=>{
+        button.addEventListener('click', function () {
+            button.style.backgroundColor = "red";
+        });
+    });
+</script>
+
+</html>

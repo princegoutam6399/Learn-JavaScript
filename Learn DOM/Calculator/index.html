@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+       }
+       .body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+       }
+       .main{
+        width: 300px;
+        background-color: lime;
+       }
+       .buttons{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 5px;
+        padding: 10px;
+    }
+    .text{
+        width: 100%;
+        text-align: center;
+    }
+    .text>input{
+        background-color: cyan;
+        width: 86%;
+        font-size: 30px;
+        text-align: right;
+        border: none;
+        outline: none;
+        padding: 20px;
+    }
+    button{
+        font-size: 30px;
+        border-radius: 10px;
+        height: 60px;
+    }
+    .buttons>button:nth-child(17){
+        grid-area: 5/1/6/3;
+    }
+    .buttons>button:nth-child(18){
+        grid-area: 5/3/6/5;
+    }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="main">
+            <div class="text">
+                <input type="text" id="display">
+            </div>
+            <div class="buttons">
+                <button onclick="add(7)">7</button>
+                <button onclick="add(8)">8</button>
+                <button onclick="add(9)">9</button>
+                <button onclick="oper('*')">X</button>
+                <button onclick="add(4)">4</button>
+                <button onclick="add(5)">5</button>
+                <button onclick="add(6)">6</button>
+                <button onclick="oper('-')">-</button>
+                <button onclick="add(1)">1</button>
+                <button onclick="add(2)">2</button>
+                <button onclick="add(3)">3</button>
+                <button onclick="oper('+')">+</button>
+                <button onclick="add('.')">.</button>
+                <button onclick="add(0)">0</button>
+                <button onclick="back()"><</button>
+                <button onclick="oper('/')">/</button>
+                <button onclick="cls()">C</button>
+                <button onclick="equal()">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function add(x){
+        var a = document.getElementById('display').value;
+        document.getElementById('display').value =a+x;
+    }
+    function cls(){
+        document.getElementById('display').value="";
+    }
+    function back(){
+        var a = document.getElementById('display').value;
+        document.getElementById('display').value = a.substring(0,a.length-1);
+    }
+    function equal(){
+        var a =document.getElementById('display').value;
+        document.getElementById('display').value= eval(a);
+    }
+    function oper(o){
+        var a =document.getElementById('display').value;
+        var lastChar = a.substring(a.length-1,a.length);
+        if(!(lastChar === '+' || lastChar ==='-' || lastChar === '*' || lastChar === '/' || lastChar === '.'  || lastChar === '%')){
+            document.getElementById('display').value=a+o;
+        }
+    }
+</script>
+</html>

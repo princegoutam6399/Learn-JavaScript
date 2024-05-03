@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: lightgreen;
+            display: flex;
+            justify-self: center;
+            align-content: center;
+            text-align: center;
+        }
+        .main{
+            margin-top: 50px;
+            margin-left: 36%;
+        }
+        .main h2{
+            background-color: rgb(193, 238, 223);
+            padding: 10px;
+        }
+        .inputs{
+            margin-top: 10px;
+            background-color: rgb(193, 238, 223);
+            padding: 20px;
+            border-radius:10px ;
+        }
+         input{
+            outline: none;
+            padding: 4px;
+            font-size: 18px;
+            width: 300px;
+            height: 40px;
+            margin: 10px;
+            float: left;
+            border: none;
+        }
+        input::placeholder{
+            margin-left: 10px;
+            font-size: 16px;
+        }
+        button{
+            background-color: skyblue;
+            padding: 10px;
+            width: 100px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .list-items{
+            margin-top: 30px;
+            background-color: rgb(193, 238, 223);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .list-items h4{
+            margin-bottom: 25px;
+            border-bottom: 2px solid #777;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        h4 i{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>To Do List</h2>
+        <div class="inputs">
+            <input type="text" placeholder="Task to be done" id="text"></p>
+            <button onclick="adding()">Add</button>
+        </div>
+        <div class="list-items" id="display">
+        </div>
+    </div>
+    <!-- <i class="fa-solid fa-trash"></i> -->
+</body>
+    <script>
+        var index = 0;
+        var list  = [];
+        function adding(){
+            let t = document.getElementById('text').value;
+            if(t!=""){
+            list[index] = '<h4>'+t+'<i class="fa-solid fa-trash" onclick="cls('+index+')"></i></h4>'
+            index++;
+            disp();
+            }
+        }
+        function disp(){
+            let data = "";
+
+            // Remove Duplicacy
+            for(let i=0;i<index;i++){
+                for(let j=i+1;j<index;j++)
+                    {
+                        if(list[i].substring(0,20)==list[j].substring(0,20)){
+                            list.splice[j,1];
+                            index--;
+                        }
+                    }
+            }
+
+            for(let i=0;i<index;i++)
+                data=data+list[i];
+            document.getElementById('display').innerHTML=data;
+        }
+        function cls(i){
+            list.splice(i,1);
+            index--;
+            disp();
+        }
+    </script>
+</html>

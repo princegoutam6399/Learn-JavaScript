@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Changer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            display: flex;
+            background-color: rgb(48, 199, 233);
+            justify-content: space-between;
+        }
+        .logo{
+            display: flex;
+            padding: 5px;
+            line-height: 30px;
+            margin-left: 30px;
+        }
+        .list-items ul li{
+            cursor: pointer;
+            font-size: 20px;
+            display: inline-flex;
+            margin-left: 30px;
+            list-style: none;
+            line-height: 30px;
+            padding: 5px;
+        }
+        .buttons{
+            display: inline-flex;
+            line-height: 30px;
+            padding: 5px;
+
+        }
+        .buttons button{
+            margin-left: 5px;
+            background: transparent;
+            border: none;
+        }
+        button i{
+            font-size: 20px;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="logo">
+                <h2>WonderLust</h2>
+            </div>
+            <div class="list-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <button class="dark" id="darkm" onclick="darkmode()"><i class="fa-solid fa-moon"></i></button></p>
+                <button class="light" onclick="lightmode()"><i class="fa-regular fa-sun"></i></button>
+            </div>
+        </div>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem beatae qui ad, dignissimos recusandae repellendus esse, ipsum doloribus corporis impedit eos obcaecati quod voluptatum similique repellat quasi molestias, exercitationem non quibusdam quae ea magni itaque doloremque. Blanditiis omnis non quasi quaerat nam, dolorum cum enim voluptate reprehenderit cupiditate accusamus tempora hic eaque sit et velit, facere laboriosam aliquid! Provident dicta, maxime quasi ipsum velit voluptatum omnis repudiandae rerum. Molestiae quis voluptatibus voluptatum fugiat assumenda, aliquid quae iure blanditiis quibusdam corrupti! Repellendus error recusandae fuga laudantium! Dolorem magnam quisquam minus at laborum fugiat quia, fuga incidunt voluptatem enim aperiam ex?</h2>
+    </div>
+</body>
+<script>
+    function darkmode(){
+        document.body.style.backgroundColor="black";
+        document.body.style.color="white";
+    }
+
+    function lightmode(){
+        document.body.style.backgroundColor="white";
+        document.body.style.color="black";
+    }
+</script>
+</html>
