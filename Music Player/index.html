@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container {
+            width: 100%;
+            height: 90vh;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head {
+            border-radius: 20px;
+            background-color: antiquewhite;
+            width: 350px;
+            height: 400px;
+            display: block;
+            text-align: center;
+        }
+
+        .button {
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            /* margin-top: 20%; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .playlast,
+        .pause,
+        .playnext {
+            display: flex;
+            margin: 20px;
+        }
+
+        .music-items {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            background-color: rgb(236, 148, 178);
+            border-radius: 20px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .range input {
+            background-color: black;
+            cursor: pointer;
+            color: black;
+            width: 200px;
+            margin-top: 30px;
+        }
+
+        /* #audio{
+            margin-top: 40px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>Music Player</h2>
+            <div class="music-items">
+                <h2>Hello</h2>
+            </div>
+            <audio id="audio" controls>
+
+            </audio>
+            <!-- <div class="range">
+                <input type="range">
+            </div> -->
+            <div class="button">
+                <div class="playlast">
+                    <i class="fa-solid fa-backward"></i>
+                </div>
+                <div class="play" id="play">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="playnext">
+                    <i class="fa-solid fa-forward"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // var num=1;
+    // var play = document.querySelector('#play');
+    // play.addEventListener('click',function(){
+    //     if(num==1){
+    //         num=0;
+    //         play.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    //     }else{
+    //         num=1;
+    //         play.innerHTML = '<i class="fa-solid fa-play"></i>';
+    //     }
+    // });
+    // <i class="fa-solid fa-pause"></i>
+    var no = 1;
+    var audio = document.querySelector("#audio");
+    audio.innerHTML = '<source src="music' + 1 + '.mp3" type="audio/mpeg">';
+    var playlast = document.querySelector('.playlast');
+    var playnext = document.querySelector('.playnext');
+    playlast.addEventListener('click', function () {
+        no--;
+        if (no < 1)
+            no = 2;
+        audio.innerHTML = '<source src="music' + no + '.mp3" type="audio/mpeg">';
+        audio.load(); 
+        audio.play();
+    });
+    playnext.addEventListener('click', function () {
+        no++;
+        if (no > 2)
+            no = 1;
+        audio.innerHTML = '<source src="music' + no + '.mp3" type="audio/mpeg">';
+        audio.load(); 
+        audio.play();
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Player</title>
+<style>
+    .container {
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+audio {
+  width: 100%;
+}
+
+/* Customize the look of the default controls */
+audio::-webkit-media-controls-panel {
+  background-color: #e4b2b2;
+  color: #fff;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-volume-slider {
+  color: #fff;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  margin-right: 10px;
+}
+
+/* Styling for progress bar */
+audio::-webkit-media-controls-timeline {
+  height: 5px;
+}
+
+audio::-webkit-media-controls-timeline-container {
+  margin: 10px 0;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-image: url('play-icon.png'); /* Add your play icon image path */
+  background-size: cover;
+}
+
+audio::-webkit-media-controls-pause-button {
+  background-image: url('pause-icon.png'); /* Add your pause icon image path */
+  background-size: cover;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <audio id="audio" controls>
+    <source src="your-music-file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+</body>
+</html>
