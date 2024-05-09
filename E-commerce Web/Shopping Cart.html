@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Page</title>
+    <style>
+        .container {
+            padding: 15px;
+            background-color: rgb(130, 198, 130);
+            margin: 20px;
+        }
+        .text{
+            margin-left: 20px;
+        }
+        .items{
+            display: flex;
+        }
+        .items img {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+        .item-name {
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 40px;
+            margin-left: 5px;
+        }
+        .buttons{
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        .buttons button{
+            cursor: pointer;
+            padding: 8px;
+            border: none;
+            font-size: 22px;
+            border-radius: 10px;
+        }
+        .price{
+            font-size: 20px;
+            margin: 20px 0px 10px 100px;
+        }
+        .total{
+            margin: 0px 0px 0px 30px;
+        }
+        .buttons input{
+            border: none;
+            width: 15px;
+            font-size: 22px;
+            background: transparent;
+
+        }
+        hr{
+            margin-left: 20px;
+            width: 45%;
+            background-color: black;
+            padding: 2px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="text">
+            <h1>Shopping Cart</h1>
+        </div>
+        <div class="container">
+            <div class="items">
+                <img src="https://img.freepik.com/free-photo/fresh-cold-orange-juice_144627-11208.jpg" alt="">
+                <div class="item-name">Orange Juice
+                    <h4>250ml</h4>
+                </div>
+                <div class="buttons">
+                    <button onclick="itemminus('qty1')">-</button>
+                    <input type="text" value="0" readonly id="qty1">
+                    <button onclick="itemplus('qty1')">+</button>
+                </div>
+                <div class="price">
+                    <input type="text" name="" class="qty1" value="2.5">
+                    <a href="#">Remove</a>
+                </div>
+            </div>
+            <div class="items">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTScPc_lQAOfC3j191Ohc7QHFIZqAwSzALLuQ&s" alt="">
+                <div class="item-name">Mango Juice
+                    <h4>250ml</h4>
+                </div>
+                <div class="buttons">
+                    <button onclick="itemminus('qty2')">-</button>
+                    <input type="text" value="0" readonly id="qty2">
+                    <button onclick="itemplus('qty2')">+</button>
+                </div>
+                <div class="price">
+                    <input type="text" name="" class="qty2" value="4">
+                    <a href="#">Remove</a>
+                </div>
+            </div>
+            <hr>
+            <div class="total">
+                <h2>Sub-Total :</h2>
+                <input type="text" id="total" value="0">
+            </div>
+        </div>
+    </div>
+</body>
+    <script>
+        var item1 = 0;
+        var item2 = 0;
+        var total = 0;
+        function itemplus(num){
+            var qty = parseInt(document.getElementById(num).value);
+            document.getElementById(num).value = qty+1;
+            var total = parseFloat(document.getElementById('total').value);
+            var price = parseFloat(document.querySelector('.'+num).value);
+            document.getElementById('total').value = total+price; 
+        }
+        function itemminus(num){
+            var qty = parseInt(document.getElementById(num).value);
+            if(qty>0){
+            document.getElementById(num).value = qty-1;
+            var total = parseFloat(document.getElementById('total').value);
+            var price = parseFloat(document.querySelector('.'+num).value);
+            document.getElementById('total').value = total-price; 
+        }
+        }
+    </script>
+</html>
