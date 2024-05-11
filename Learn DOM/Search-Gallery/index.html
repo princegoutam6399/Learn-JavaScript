@@ -10,24 +10,67 @@
             padding: 30px;
             background-color: #bff1d8;
             text-align: center;
-            
+
         }
 
         .search input {
             font-size: 17px;
             width: 400px;
-            padding: 15px;
+            padding: 12px;
+            border: none;
         }
 
         .items {
             display: grid;
             margin-top: 20px;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
 
         .image img {
             margin-bottom: 20px;
             width: 300px;
+        }
+        .container {
+            overflow: hidden;
+        }
+
+        .filterDiv {
+            float: left;
+            background-color: #2196F3;
+            color: #ffffff;
+            width: 100px;
+            line-height: 100px;
+            text-align: center;
+            margin: 2px;
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        #myBtnContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .btn {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ddd;
+        }
+
+        .btn.active {
+            background-color: #666;
+            color: white;
         }
     </style>
 </head>
@@ -38,6 +81,33 @@
             <h1>Gallery</h1>
             <input type="text" placeholder="Search Something...">
         </div>
+
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('birds')"> Birds</button>
+            <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+            <button class="btn" onclick="filterSelection('flower')"> Flower</button>
+            <button class="btn" onclick="filterSelection('sky')"> Sky</button>
+            <button class="btn" onclick="filterSelection('lakes')"> Lakes</button>
+            <button class="btn" onclick="filterSelection('mountains')">Mountains</button>
+        </div>
+
+        <!-- <div class="container">
+            <div class="filterDiv cars">BMW</div>
+            <div class="filterDiv colors fruits">Orange</div>
+            <div class="filterDiv cars">Volvo</div>
+            <div class="filterDiv colors">Red</div>
+            <div class="filterDiv cars">Ford</div>
+            <div class="filterDiv colors">Blue</div>
+            <div class="filterDiv animals">Cat</div>
+            <div class="filterDiv animals">Dog</div>
+            <div class="filterDiv fruits">Melon</div>
+            <div class="filterDiv fruits animals">Kiwi</div>
+            <div class="filterDiv fruits">Banana</div>
+            <div class="filterDiv fruits">Lemon</div>
+            <div class="filterDiv animals">Cow</div>
+        </div> -->
+
         <div class="items">
             <div class="image">
                 <img src="https://images.pexels.com/photos/5395766/pexels-photo-5395766.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
@@ -45,38 +115,31 @@
                 <h4></h4>
             </div>
             <div class="image">
-                <img src="https://cdn.pixabay.com/photo/2023/08/24/21/02/insect-8211593_640.jpg"
-                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2023/08/24/21/02/insect-8211593_640.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="image">
-                <img src="https://cdn.pixabay.com/photo/2017/10/04/04/19/sky-2815020_640.jpg"
-                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2017/10/04/04/19/sky-2815020_640.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="image">
-                <img src="https://cdn.pixabay.com/photo/2024/03/09/10/14/nature-8622415_640.jpg"
-                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2024/03/09/10/14/nature-8622415_640.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="image">
-                <img src="https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_640.jpg"
-                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2022/12/01/04/40/backpacker-7628303_640.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="image">
-                <img src="https://cdn.pixabay.com/photo/2024/01/29/20/04/mountains-8540738_640.jpg"
-                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2024/01/29/20/04/mountains-8540738_640.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="image">
-                <img src="https://cdn.pixabay.com/photo/2023/05/01/19/06/flowers-7963663_640.jpg"
-                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2023/05/01/19/06/flowers-7963663_640.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="image">
-                <img src="https://cdn.pixabay.com/photo/2023/08/11/03/35/deer-8182756_640.jpg"
-                    alt="">
+                <img src="https://cdn.pixabay.com/photo/2023/08/11/03/35/deer-8182756_640.jpg" alt="">
                 <h4></h4>
             </div>
         </div>
