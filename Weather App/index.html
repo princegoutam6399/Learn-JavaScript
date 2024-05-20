@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter City Name" id="city">
+            <button onclick="search()"><img src="images/search.png" class="w-50" alt=""></button>
+        </div>
+        <div class="weather">
+            <div class="w-icon"> <img src="images/rain.png" class="weather-icon" alt="">
+            </div>
+            <h2 class="temp"></h2>
+            <h2 class="city-name"></h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="">
+                    <div>
+                        <p class="humidity"></p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="">
+                    <div>
+                        <p class="wind"></p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    async function search(){
+        let ci = document.getElementById('city').value;
+        abc(ci);
+    }
+    async function abc(city){
+        const url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=";
+        const apikey = "58c9bb4657bc90946ad82bb39c075655";
+        const wheather = await fetch(url+apikey+"&units=metric");
+        const result = await wheather.json();
+        var humidity = result.main.humidity;
+        var temp = result.main.temp;
+        var speed = result.wind.speed;
+        var icon = result.weather[0].main;
+        document.querySelector('.wind').innerHTML = Math.round(speed)+" km/hr";
+        document.querySelector('.humidity').innerHTML = Math.round(humidity)+"%";
+        document.querySelector('.temp').innerHTML = Math.round(temp)+"°C";
+        document.querySelector('.city-name').innerHTML = city;
+        console.log(result);
+        console.log(result.clouds.all);
+        
+        document.querySelector('.weather-icon').src = "images/"+icon+".png";
+    }
+    abc("kolkata");  
+</script>
+</html>
