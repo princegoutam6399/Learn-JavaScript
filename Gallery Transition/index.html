@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Transition</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .back-item{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(10, 147, 102);
+        }
+        .text p{
+            font-size: 20px;
+        }
+        .item{
+            margin-top: 90px;
+        }
+        .item .box1{
+            cursor: pointer;
+            margin-left:66%; 
+            border-radius: 20px;
+            width: 200px;
+            height: 400px;
+            background-color: aquamarine;
+            float: left;
+        }
+        .box2{
+            cursor: pointer;
+            margin-left: 84%; 
+            border-radius: 20px;
+            width: 200px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+        .buttons{
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            display: flex;
+            padding: 20px;
+        }
+        .buttons #pre,#for{
+            cursor: pointer;
+            margin-left: 20px;
+            width: 25px;
+            height: 30px;   
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items">
+            <div class="back-item">
+                    <div class="back-box">
+
+                    </div>
+                <div class="item">
+                   <div class="box1"></div>
+                   <div class="box2"></div>
+                </div>
+                <div class="buttons">
+                    <button id="pre"><</button>
+                    <button id="for">></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
