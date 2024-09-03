@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render a Element</title>
+</head>
+
+<body>
+    <div class="list">
+        <ul id="todolist">
+            <input type="checkbox">
+        </ul>
+    </div>
+
+    <script>
+        const arr = ["Play Cricket", "Read Book", "Play Video"];
+
+        const fecthData = arr.map((item)=>{
+            return `<li>${item}</li>`
+        });
+
+        document.getElementById("todolist").innerHTML = fecthData.join("");
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete item</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+
+        .list {
+            background: #eaefae;
+            min-height: 100vh;
+        }
+
+        .list ul input {
+            display: flex;
+            float: left;
+            margin: 15px 0px 0px 10px;
+        }
+
+        .list ul li {
+            font-size: 25px;
+            margin: 5px;
+        }
+
+        .list ul {
+            padding: 20px;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 3px;
+            display: none;
+        }
+
+        button.delete {
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            right: 80%;
+            top:30px;
+        }
+
+        .show-btn button.delete {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <ul>
+            <li>
+                <input type="checkbox" class="check">
+                <span>Play Cricket</span>
+                <button class="delete">Delete</button>
+            </li>
+            <li>
+                <input type="checkbox" class="check">
+                <span>Read Book</span>
+                <button class="delete">Delete</button>
+            </li>
+            <li>
+                <input type="checkbox" class="check">
+                <span>Play Games</span>
+                <button class="delete">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+
+        const checkBoxes = document.querySelectorAll('.check');
+        const deleteBtn = document.querySelectorAll('.delete');
+
+        function handleEvent(click){
+            document.querySelectorAll('.show-btn').forEach(li=>{
+                li.classList.remove('show-btn');
+            });
+
+            event.target.parentNode.classList.add('show-btn');
+        }
+
+        checkBoxes.forEach(checkbox => {
+                checkbox.addEventListener('click',handleEvent);
+        });
+
+        deleteBtn.forEach(button => {
+            button.addEventListener('click', function(){
+                button.parentNode.remove();
+            })
+        })
+
+    </script>
+</body>
+
+</html>

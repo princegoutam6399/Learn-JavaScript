@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Shortnur Function</title>
+</head>
+<body>
+    <script>
+        function nameShort(name,maxLength){
+            if(name.length > maxLength){    
+                return name.substring(0,maxLength)+"..."
+            }
+            return name
+        }
+
+        let newName = nameShort("Code With Harry",12);
+        document.write(newName);
+    </script>
+</body>
+</html>
