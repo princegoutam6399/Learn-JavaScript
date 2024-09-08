@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Anything by Patse URL</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgb(0, 179, 255);
+        }
+        .container{
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            min-height: 300px;
+            width: 400px;
+        }
+        .top p{
+            margin-top: 15px;
+        }
+        .inputs{
+            margin-top: 10px;
+        }
+        .inputs input{
+            font-size: 16px;
+            margin-top: 20px;
+            outline: none;
+            padding-left: 10px;
+            width: 350px;
+            height: 40px;
+        }
+        input::placeholder{
+            font-size: 16px
+        }
+        #btn{
+            background-color:rgb(0, 179, 255) ;
+            width: 350px;
+            height: 40px;
+            border: none;
+            margin-top: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h2>File Downloader</h2>
+            <p>Paste url of any image or video download. this tool is made with javascript</p>
+        </div>
+        <div class="inputs">
+            <input type="text" id="inputValue" placeholder="Paste file url"><br>
+            <button id="btn">Download File</button>
+        </div>
+    </div>
+
+    <script>
+
+        const input = document.getElementById('inputValue');
+        const downloadBtn = document.getElementById('btn');
+
+        downloadBtn.addEventListener("click",e=>{
+            e.preventDefault();
+            fetchFile(input.value);
+        });
+        
+        function fetchFile(url){
+            fetch(url).then(res=>res.blob()).then(file=>{
+                let tempUrl = URL.createObjectURL(file);
+                let aTag = document.createElement('a');
+                aTag.href = tempUrl;
+
+                aTag.download = url.replace(/^.*{\\\/}/,'');
+                document.body.appendChild(aTag);
+                aTag.click();
+                aTag.remove();
+            });
+        }
+
+    </script>
+</body>
+</html>
