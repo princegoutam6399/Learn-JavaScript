@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        #button {
+            border: none;
+            cursor: pointer;
+            background-color: #4CAF50;
+            font-size: 20px;
+            width: 150px;
+            height: 50px;
+            color: white;
+        }
+
+        #button:hover {
+            background-color: #45a049;
+        }
+
+        .login{
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            background: #c9adad;
+            display: none;
+        }
+        form {
+            margin-top: 20px;
+        }
+        #uname, #psw {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .loginBtn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #closeBtn{
+            background-color: #f44336;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn">
+        <button id="button" onclick="popUp()">Click Me</button>
+    </div>
+    <div class="login">
+        <form action="">
+            <label for="uname">Username:</label>
+            <input type="text" id="uname" name="uname">
+            <label for="psw">Password:</label>
+            <input type="password" id="psw" name="psw">
+            <input type="submit" class="loginBtn" value="Login">
+            <button id="closeBtn" onclick="closePopup()">Close</button>
+        </form>
+    </div>
+
+    <script>
+
+        function popUp() {
+            document.querySelector(".login").style.display = "block";
+            document.querySelector(".btn").style.display = "none";
+        }
+
+        function closePopup() {
+            document.querySelector(".login").style.display = "none";
+            document.querySelector("#button").style.overflow = "auto";
+        }
+
+
+    </script>
+</body>
+
+</html>

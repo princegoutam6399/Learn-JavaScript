@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            height: 50px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        i{
+            margin-left: -70px;
+            margin-top: 7px;
+            cursor: pointer;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        .success {
+            color: green;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="password" id="pass" placeholder="Enter Password">
+        <i class="fa-regular fa-eye"></i>
+    </div>
+
+    <script>
+
+        let password = document.getElementById("password");
+        let eyeIcon = document.querySelector(".fa-regular.fa-eye");
+
+        eyeIcon.addEventListener("click", function() {
+            if (password.type === "password") {
+                password.type = "text";
+                eyeIcon.classList.remove("fa-regular");
+                eyeIcon.classList.add("fa-solid");
+            } else {
+                password.type = "password";
+                eyeIcon.classList.remove("fa-solid");
+                eyeIcon.classList.add("fa-regular");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

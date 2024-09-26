@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px;
+        }
+        
+        .search-box{
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .search-box h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            /* border: none; */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .items{
+            width: 50%;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        img{
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="search-box">
+            <h1>Image Gallery</h1>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="gallery"></div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/28551409/pexels-photo-28551409/free-photo-of-rustic-snow-covered-cabin-in-winter-landscape.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="Image 1">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Image 2">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Image 3">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Image 4">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/66898/elephant-cub-tsavo-kenya-66898.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Image 5">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/70069/pexels-photo-70069.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Image 6">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/28551408/pexels-photo-28551408/free-photo-of-charming-chalet-in-snowy-alpine-landscape.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="Image 7">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Image 8">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/257092/pexels-photo-257092.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Image 9">
+            </div>
+            <div class="items">
+                <img src="https://images.pexels.com/photos/28551403/pexels-photo-28551403/free-photo-of-serene-misty-landscape-with-lush-greenery.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="Image 10">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

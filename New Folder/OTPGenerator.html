@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .head {
+            margin-top: 100px;
+            background-color: #aefd46;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 50px;
+            border: none;
+            cursor: pointer;
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>OTP Generator</h2>
+            <button class="button" onclick="generateOtp()">Generate OTP</button>
+            <h2 class="output"></h2>
+        </div>
+    </div>
+
+    <script>
+
+        function generateOtp() {
+            var otp = '';
+            var digits = '0123456789';
+            var otpLength = 4;
+
+            for (let i = 0; i < otpLength; i++) {
+                otp += digits[Math.floor(Math.random() * digits.length)];
+            }
+            document.querySelector('.output').innerText = "Your OTP is: " + otp;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+            display: none;
+        }
+
+        img.active {
+            display: block;
+        }
+
+        .icon {
+            background: #85de7d;
+            padding: 16px 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .icon.left {
+            left: 60px;
+        }
+
+        .icon.right {
+            right: 60px;
+        }
+
+        .slider-container {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon left">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+
+        <div class="slider-container">
+            <img class="active"
+                src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Image 1">
+            <img src="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Image 2">
+            <img src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Image 3">
+        </div>
+
+        <div class="icon right">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </div>
+
+    <script>
+
+        const leftArrow = document.querySelector('.icon.left');
+        const rightArrow = document.querySelector('.icon.right');
+        const images = document.querySelectorAll('.slider-container img');
+        let currentIndex = 0;
+
+        function imageSlider(idx) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === idx) {
+                    img.classList.add('active');
+                }
+            });
+        }
+
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            imageSlider(currentIndex);
+        });
+
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            imageSlider(currentIndex);
+        });
+
+    </script>
+</body>
+
+</html>

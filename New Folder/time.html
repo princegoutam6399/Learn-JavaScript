@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .timer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            font-size: xx-large;
+        }
+
+        span {
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            background-color: #4caf50;
+            color: #fff;
+            margin: 10px;
+        }
+
+        #start {
+            background-color: lawngreen;
+            color: black;
+        }
+
+        #stop {
+            background-color: red;
+            color: black;
+        }
+
+        #reset {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="timer">
+            <h2 id="time">00:00:00</h2>
+        </div>
+        <!-- <div class="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div> -->
+    </div>
+
+    <script>
+        var time = document.getElementById("time");
+        var hours = 0;
+        var mintues = 0;
+        var sceonds = 0;
+
+        setInterval(function () {
+            let now = new Date();
+            let hours = now.getHours();
+            let mintues = now.getMinutes();
+            let seconds = now.getSeconds();
+            let timePeroid = "AM";
+
+            if (hours >= 12) {
+                timePeroid = "PM";
+            } if (hours > 12) {
+                hours = hours - 12;
+            }
+
+            hours = hours < 10 ? "0" + hours : hours;
+            mintues = mintues < 10? "0" + mintues : mintues;
+            seconds = seconds < 10? "0" + seconds : seconds;
+
+            time.innerHTML = hours + ":" + mintues + ":" + seconds + " " + timePeroid;
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

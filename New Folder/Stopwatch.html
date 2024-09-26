@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+
+        .text {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn {
+            font-size: 24px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .container {
+            width: 400px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #start,
+        #pause,
+        #reset {
+            width: 100%;
+        }
+
+        .red {
+            background-color: #f44336;
+        }
+
+        .orange {
+            background-color: #ff9800;
+        }
+
+        .green {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <h2>Time : <span id="timer">0</span> </h2>
+        </div>
+        <div class="buttons">
+            <button class="btn green" id="start">Start</button>
+            <button class="btn orange" id="pause">Pause</button>
+            <button class="btn red" id="reset">Reset</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        let timer = document.getElementById('timer');
+        let start = document.getElementById('start');
+        let pause = document.getElementById('pause');
+        let reset = document.getElementById('reset');
+
+        var flag = 0;
+
+        function time() {
+            flag = flag+ 1;
+            timer.innerHTML = flag;
+        }
+
+        var st;
+        start.addEventListener('click', function () {
+            st = setInterval(function () { time(), 100 });
+        });
+
+        pause.addEventListener('click', function () {
+            clearInterval(st);
+        });
+
+        reset.addEventListener('click', function () {
+            clearInterval(st);
+            flag = 0;
+            timer.innerHTML = flag;
+        })
+
+    </script>
+</body>
+
+</html>
