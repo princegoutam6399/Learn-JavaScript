@@ -1,0 +1,178 @@
+<!-- Matrix Program  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Hello</h2>
+    <script>
+        // var matrix = [[4,8,3],[3,8,5],[4,2,7]];
+
+        // for(let i=0;i<=2;i++){
+        //     for(let j=0;j<=2;j++)
+        //     {
+        //         document.write(matrix[i][j]+" ");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // Add Two Matrices 
+
+        // var mat1=[[1,3,4],[3,6,7],[5,7,6]];
+        // var mat2=[[2,5,6],[1,6,9],[4,7,0]];
+        // for(let i=0;i<=2;i++)
+        // {
+        //     for(let j=0;j<=2;j++)
+        //     {
+        //         document.write(mat1[i][j]+mat2[i][j]+" ");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // Multiply Two Matrices
+        // var mat1=[[2,3,4],[1,2,1],[1,9,2]];
+        // var mat2=[[2,1,2],[1,1,1],[3,2,1]];
+        // var mat3=[[0,0,0],[0,0,0],[0,0,0]];
+        // var temp=0;
+        // for(let i=0;i<=2;i++){
+        //     for(let j=0;j<=2;j++)
+        //     {
+        //         for(let k=0;k<=2;k++)
+        //         {
+        //             temp=temp+(mat1[i][k]*mat2[k][j]);
+        //         }
+        //         mat3[i][j]=temp;
+        //         temp=0;
+        //     }
+        // }
+        // for(let i=0;i<=2;i++)
+        // {
+        //     for(let j=0;j<=2;j++)
+        //     {
+        //         document.write(mat3[i][j]+"  ");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        // subtract the two matrices
+        // var mat1=[[2,3,4],[1,2,1],[1,9,2]];
+        // var mat2=[[2,1,2],[1,1,1],[3,2,1]];
+
+
+        // determine whether two matrices are equal
+        // var mat1=[[1,1,0],[0,1,0],[1,1,1]];
+        // var mat2=[[0,1,4],[1,1,1],[0,1,0]];
+        // if((mat1.length*mat1[0].length)==(mat2.length*mat2[0].length)){
+        //     document.write("Equal")
+        // }else{
+        //     document.write("Not Equal")
+        // }
+
+        // display the lower triangular matrix
+        // var mat=[[4,6,3],[3,6,7],[3,4,7]]
+        //     for(let i=0;i<=2;i++){
+        //         for(let j=0;j<=2;j++){
+        //             if(i<j)
+        //                 document.write("0 ");
+        //             else
+        //                 document.write(mat[i][j]," ");
+        //         }
+        //         document.write("<br>");
+        //     }
+
+
+        // display the Upper triangular matrix
+        // var mat=[[4,6,3],[3,6,7],[3,4,7]]
+        // for(let i=0;i<=2;i++){                                           
+        //     for(let j=0;j<=2;j++){
+        //         if(i>j){
+        //             document.write("0 ");
+        //         }else{
+        //             document.write(mat[i][j]," ");
+        //         }
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // find the frequency of odd & even numbers in the given matrix
+        // var mat=[[2,3,5],[4,7,8],[9,10,7]];
+        // for(let i=0;i<=2;i++){
+        //     for(let j=0;j<=2;j++){
+        //         if(mat[i][j]%2==0){
+        //             document.write(mat[i][j]," Even<br>");
+        //         }else{
+        //             document.write(mat[i][j]," Odd<br>");
+        //         }
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // find the sum of each row and each column of a matrix
+        // var mat = [[2, 3, 5], [4, 7, 8], [9, 10, 7]];
+        // for (let i = 0; i <= 2; i++) {
+        //     let row=0;
+        //     let col=0;
+        //     for (j = 0; j <= 2; j++) {
+        //         row=row+mat[i][j];
+        //         col=col+mat[j][i];
+        //     }
+        //     document.write((i+1)+" Column Addition : "+col+"<br>");
+        //     document.write((i+1)+" Row Addition : "+row+"<br>");
+        // }
+
+        // find the transpose of a given matrix
+        // var mat = [[2, 3, 5], [4, 7, 8], [9, 10, 7]];
+        // for(let i=0;i<=2;i++){
+        //     for(let j=0;j<=2;j++){
+        //         document.write( mat[j][i]," ");
+        //     }
+        //     document.write("<br>")
+        // } 
+
+        // determine whether a given matrix is an identity matrix
+        // var mat = [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
+        // var flag = 1;
+        // for (let i = 0; i <= 2; i++) {
+        //     for (let j = 0; j <= 2; j++) {
+        //         if ((mat[i][j] != 0)&&(i!=j))
+        //             flag = 0;
+        //         if((i==j)&&(mat[i][j]!=1))
+        //             flag=0;
+        //     }
+        // }
+        // if(flag==1){
+        //     document.write('Matrix Is identity');
+        // }else{
+        //     document.write('Matrix Is Not Identity');
+        // }
+
+        // determine whether a given matrix is a sparse matrix
+
+        // var mat=[[2,4,0],[0,0,0],[0,2,8]];
+        // var count=0;
+        // for(let i=0;i<=2;i++){
+        //     for(let j=0;j<=2;j++){
+        //         if(mat[i][j]==0){
+        //             count++;
+        //         }
+        //     }
+        // }
+        // if(count>(mat.length*mat[0].length)/2){
+        //     document.write("Matrix Is Sparse");
+        // }else{
+        //     document.write("Matrix Is Not Sparse");
+        // }
+
+        
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Pattern</h2>
+    <script>
+        // for(let i=1;i<=5;i++){
+        //     for(let j=5;j>=1;j--){
+        //         if(i==j)
+        //             document.write("*");
+        //         else
+        //             document.write(j);
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // output:
+        //         5432*
+        //         543*1
+        //         54*21
+        //         5*321
+        //         *4321
+
+        // *000*000*
+        // 0*00*00*0
+        // 00*0*0*00
+        // 000***000
+        // for (let i = 1; i <= 4; i++) {
+        //    for(let j=1;j<=4;j++){
+        //     if(i==j)
+        //         document.write("*");
+        //     else
+        //         document.write(0);
+        //    }
+        //    document.write("*");
+        //    for(let j=4;j>=1;j--){
+        //     if(i==j)
+        //         document.write("*");
+        //     else
+        //         document.write(0);
+        //    }
+        //    document.write("<br>");
+        // }
+
+
+        // for(let i=1;i<=10;i++){
+        //     for(let j=1;j<=i;j++){
+        //         document.write(i*j);
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // 1
+        // 24
+        // 369
+        // 481216
+        // 510152025
+        // 61218243036
+        // 7142128354249
+        // 816243240485664
+        // 91827364554637281
+        // 102030405060708090100
+
+
+        // var m=1;
+        // var n=1;
+        // for(let i=1;i<=7;i++){
+        //     for(let j=1;j<=4;j++){
+        //         if(m==j)
+        //         document.write(j);
+        //         else
+        //         document.write("&#160;");
+        //     }
+        //     for(j=3;j>=1;j--){
+        //         if(m==j)
+        //         document.write(j);
+        //         else
+        //         document.write("&#160;");
+        //     }
+        //     if(m==4)
+        //         n=-1;
+        //     m=m+n;
+        //     document.write("<br>");
+        // }
+
+        // output:
+        // 1     1
+        //  2   2
+        //   3 3
+        //    4
+        //   3 3
+        //  2   2
+        // 1     1
+
+
+
+        // var m=4;
+        // for (let i = 1; i <= 4; i++) {
+        //    for(let j=1;j<=4;j++)
+        //    {
+        //     if(j>m)
+        //     document.write("*");
+        //     else
+        //     document.write(j);
+        //    }
+        //    for(let j=4;j>=1;j--){
+        //     if(j>m)
+        //     document.write("*");
+        //     else
+        //     document.write(j);
+        //    }
+        //    m--;
+        //    document.write("<br>");
+        // }
+
+        // Output
+        // 12344321
+        // 123**321
+        // 12****21
+        // 1******1
+
+
+        // for (let i = 10; i >= 1; i--) {
+        //     for (let j = i; j <= 9; j++)
+        //         document.write(j);
+        //     document.write(0);
+        //     for (let j = 9; j >= i; j--)
+        //         document.write(j);
+        //     document.write("<br>");
+        // }
+
+        // Output:
+        // 0
+        // 909
+        // 89098
+        // 7890987
+        // 678909876
+        // 56789098765
+        // 4567890987654
+        // 345678909876543
+        // 23456789098765432
+        // 1234567890987654321
+
+        // for(let i=65;i<=69;i++){
+        //     for(let j=65;j<=i;j++){
+        //         document.write(String.fromCharCode(j));
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // Output:
+        // A
+        // AB
+        // ABC
+        // ABCD
+        // ABCDE
+
+        // for (let i = 65; i <= 69; i++) {
+        //     for (let j = 65; j <= i; j++) {
+        //         document.write(String.fromCharCode(i));
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // Output:
+        // A
+        // BB
+        // CCC
+        // DDDD
+        // EEEEE
+
+
+
+        // for (let j = 1; j <= 10; j++)
+        //     document.write(" " + 1);
+        // document.write("<br>");
+        // for (let i = 1; i <= 8; i++) {
+        //     for (let j = 1; j <= 10; j++)
+        //         if ((j == 1) || (j == 10))
+        //             document.write(1);
+        //         else
+        //             document.write("&#160;&#160; ");
+        //     document.write("<br>");
+        // }
+        // for (let j = 1; j <= 10; j++)
+        //     document.write(" " + 1);
+        // document.write("<br>");
+
+        // Output:
+        // 1 1 1 1 1 1 1 1 1 1
+        // 1                 1
+        // 1                 1
+        // 1                 1
+        // 1                 1
+        // 1                 1
+        // 1                 1
+        // 1                 1
+        // 1                 1
+        // 1 1 1 1 1 1 1 1 1 1
+
+
+        // for(let i=5;i>=1;i--){
+        //     for(let j=1;j<=i;j++){
+        //         document.write(j);
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        // Output:
+        // 12345
+        // 1234
+        // 123
+        // 12
+        // 1
+
+
+
+        // var m = 1;
+        // for (let i = 9; i >= 1; i = i - 2) {
+        //     for (let n = 1; n <= m; n++)
+        //         document.write("&#160;");
+        //     for (let j = 1; j <= i; j++)
+        //         document.write("*");
+        //     m = m + 1;
+        //     document.write(" <br>");
+        // }
+
+        // output: 
+        //  *********
+        //   *******
+        //    *****
+        //     ***
+        //      *   
+
+        // let i=1;
+        // let z=16;
+        // for(i=1;i<=5;i++)
+        //     document.write(i+" ");
+        // document.write("<br>");
+        // for(let m=1;m<=3;m++){
+        //     document.write(z+"&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"+i);
+        //     z--;
+        //     i++;
+        //     document.write("<br>");
+        // }
+        // for(i=1;i<=5;i++){
+        //     document.write(z+" ");
+        //     z--;
+        // }
+
+        // Output: 
+        // 1 2 3 4 5
+        // 16          6
+        // 15          7
+        // 14          8
+        // 13 12 11 10 9
+
+
+        //              *
+        //             * *
+        //            * * *
+        //           * * * *
+        //          * * * * *
+        //         * * * * * *
+        //        * * * * * * *
+        //        * * * * * * *
+        //         * * * * * *
+        //          * * * * *
+        //           * * * *
+        //            * * *
+        //             * *
+        //              *
+
+
+    </script>
+</body>
+
+</html>
